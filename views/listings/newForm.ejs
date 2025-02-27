@@ -1,0 +1,61 @@
+<% layout('/layouts/boilerplate') %>
+        <form method="POST" action="/listings" novalidate class="needs-validation" enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-8 offset-2">
+
+                   <div class="mb-3">
+ <label for="title" class="form-label">Enter Title : </label>
+            <input name="listing[title]" id="title" placeholder="enter title" class="form-control" type="text" required/>
+            <div class="valid-feedback">Title Looks Good</div>
+          <div class="invalid-feedback">Please Enter Title Correctly</div></div>
+           <div class="mb-3">
+                       <label for="description" class="form-label">Enter Description : </label>
+            <textarea name="listing[description]" id="description" class="form-control" placeholder="enter description" required></textarea>
+            <div class="valid-feedback">Description Looks Good</div>
+          <div class="invalid-feedback">Please Enter Description Correctly</div></div>
+            
+          <div class="mb-3"><label for="image" class="form-label">Upload Image  : </label>
+            <input name="listing[image]" id="image" class="form-control" type="file" required /> <div class="valid-feedback">Image Looks Good</div>
+          <div class="invalid-feedback">Please Upload an Image</div></div> 
+          <div class="row">
+            <div class="mb-3 col-md-4"><label for="price" class="form-label">Enter Price : </label>
+            <input name="listing[price]" id="price" class="form-control" required placeholder="enter price" type="number" />
+            <div class="valid-feedback">Price Looks Good</div>
+          <div class="invalid-feedback">Please Enter a Valid Price</div></div>
+           <div class="mb-3 col-md-8"> <label for="country" class="form-label">Enter Country : </label>
+            <input name="listing[country]"  class="form-control" id="country" required placeholder="enter country" type="text" />
+            <div class="valid-feedback">Country Looks Good</div>
+          <div class="invalid-feedback">Please Enter a Valid Country</div></div></div>
+            <div class="mb-3"><label for="location" class="form-label">Enter Location : </label>
+            <input name="listing[location]"  class="form-control" id="location" placeholder="enter location" required type="text" />
+            <div class="valid-feedback">Location Looks Good</div>
+          <div class="invalid-feedback">Please Enter Location Correctly</div></div>
+          <div class="mb-3"><label for="category" class="form-label">Please Select an Category For Your Place</label>
+           <select class="form-select form-select-sm selss" id="category" name="listing[category][]">
+            <option selected value="">Choose one Option</option>
+            <option value="rooms">Rooms Avilable</option>
+            <option value="iconic cities">Iconic Cities Avilable</option>
+            <option value="castles">Castles Avilable</option>
+            <option value="amazing pools">Amazing Pools Avilable</option>
+            <option value="mountains">Mountains Avilable</option>
+            <option value="arctic">Arctic Avilable</option>
+            <option value="farms">Farms Avilable</option>
+            <option value="camping">Camping Avilable</option>
+          </select> 
+          <div class="valid-feedback">Looks Good Category</div>
+          <div class="invalid-feedback">Please Select Correctly</div></div>
+        
+           <button class="btn btn-dark add-btn">Add</button> </div> </div>
+        </form>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const categorySelect = document.getElementById("category");
+          const addButton = document.getElementsByClassName("add-btn");
+function toggleButton() {
+  if (categorySelect.value === "") {
+    addButton.disabled = true;
+  } else {
+    addButton.disabled = false;
+  }
+}});
+        </script>

@@ -1,0 +1,30 @@
+   <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><i class="fa-solid fa-mountain-city"></i></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a href="/" class="nav-link"><i><b>SWASTIK TRIPATHI</b></i></a>
+              <a class="nav-link"  href="/">Home</a>
+              <a class="nav-link" href="/listings">Explore</a>
+            </div>
+            <div class="navbar-nav ms-auto">
+<form class="d-flex" role="search" action="/search" method="post">
+<input class="form-control me-2 search-input" type="search" name="search" placeholder="Search Your Destinations" >
+<button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass-location fa-beat"></i>Search</button>
+</form>
+</div>
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="/listings/new">Add Your Home </a>
+              <% if(!currUser){ %>
+              <a class="nav-link"  href="/signup"><b>SignUp</b></a>
+              <a class="nav-link" href="/login"><b>SignIn</b></a>
+              <% } else if (currUser) { %>
+              <a class="nav-link" href="/logout"><b>LogOut</b></a>
+              <% } %>
+            </div></div></div> 
+      </nav>
+
+      

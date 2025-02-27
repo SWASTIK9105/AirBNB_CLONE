@@ -1,0 +1,44 @@
+<% layout('/layouts/boilerplate') %> 
+<header>
+  <div class="custom-container">
+    <div class="scroller-wrapper">
+      <div class="custom-scroller">
+        <div class="custom-filter"><a href="/trending"><div class="custom-icons"><i class="fa-solid fa-fire fa-shake"></i></div><p>Trending</p></a></div>
+        <div class="custom-filter"><a href="/rooms"><div class="custom-icons"><i class="fa-solid fa-bed"></i></div><p>Rooms</p></a></div>
+        <div class="custom-filter"><a href="/iconic-cities"><div class="custom-icons"><i class="fa-solid fa-city"></i></div><p>Iconic Cities</p></a></div>
+        <div class="custom-filter"><a href="/mountains"><div class="custom-icons"><i class="fa-solid fa-mountain"></i></div><p>Mountains</p></a></div>
+        <div class="custom-filter"><a href="/castles"><div class="custom-icons"><i class="fa-brands fa-fort-awesome"></i></div><p>Castles</p></a></div>
+        <div class="custom-filter"><a href="/amazing-pools"><div class="custom-icons"><i class="fa-solid fa-person-swimming"></i></div><p>Amazing Pools</p></a></div>
+        <div class="custom-filter"><a href="/camping"><div class="custom-icons"><i class="fa-solid fa-campground"></i></div><p>Camping</p></a></div>
+        <div class="custom-filter"><a href="/farms"><div class="custom-icons"><i class="fa-solid fa-tractor"></i></div><p>Farms</p></a></div>
+        <div class="custom-filter"><a href="/arctic"><div class="custom-icons"><i class="fa-solid fa-person-skiing"></i></div><p>Arctic</p></a></div>
+      </div>
+    </div>
+
+    <div class="custom-tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Display Total After Taxes</label>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="custom-main-content">
+  <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
+    <% for(let listing of AllListings) { %>
+    <a href="/listings/<%= listing._id %>" class="listing-link">
+      <div class="card col listing-card">
+        <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem" />
+        <div class="card-img-overlay"></div>
+        <div class="card-body">
+          <p class="card-text">
+            <b><%= listing.title %></b> <br />
+            &#8377; <%= listing.price.toLocaleString("en-IN") %> / night  
+            <i class="tax-info">+18% GST</i>
+          </p>
+        </div>
+      </div>
+    </a>
+    <% } %>
+  </div>
+</div>

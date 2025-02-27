@@ -1,0 +1,10 @@
+const express =require('express');
+const router=express.Router();
+const AsyncWrap=require('../utility/wrapAsync.js');
+const passport  = require('passport');
+const { saveResdirectUrl } = require('../middleware.js');
+const  UserController = require('../controllers/users.js');
+router.route('/signup').get(UserController.GetsignUp).post(AsyncWrap(UserController.signUp));
+router.route('/login').get(UserController.Getlogin).post(saveResdirectUrl,passport.authenticate('local',{failureRedirect:'/login',failureFlash:true}),UserController.logIn);
+router.get('/logout',UserController.logOut);
+module.exports=router;
