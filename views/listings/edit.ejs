@@ -1,5 +1,5 @@
 <% layout('/layouts/boilerplate') %>
-
+    
         <form method="POST" action="/listings/<%= lits._id %>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-8 offset-2">
@@ -10,21 +10,21 @@
           <div class="invalid-feedback">Please Enter Title Correctly</div>   
             </div>
             <div class="mb-3">
-            <label for="description" class="form-label mt-3">Edit Description : </label>
+            <label for="description" class="form-label mt-3 ">Edit Description : </label>
             <textarea name="listing[description]" id="description" class="form-control" required><%= lits.description %></textarea>
             <div class="valid-feedback">Descripton Looks Good</div>
           <div class="invalid-feedback">Please Enter Description Correctly</div>
            </div>
            <div class="mb-3">
             <h6><i>Current Image :</i></h6>
-    <img src="<%= OriginalImageUrl %>"  alt="image" class="boxer"></div>
+    <img src="<%= OriginalImageUrl %>" class="boxer" alt="image" ></div>
            <div class="mb-3"><label for="image" class="form-label mt-3">Upload New Image : </label>
             <input name="listing[image]" id="image"   type="file" class="form-control"/>
             <div class="valid-feedback">Image Looks Good</div>
           <div class="invalid-feedback">Please Enter A Valid Image Link</div></div>
             <div class="row">
                 <div class="mb-3 col-md-4"><label for="price" class="form-label edio">Edit Price : </label>
-            <input name="listing[price]" id="price" required value="<%= lits.price %>" class="form-control edio" type="number" />
+            <input name="listing[price]" id="price"  required value="<%= lits.price %>" class="form-control edio" type="number" />
             <div class="valid-feedback">Price Looks Good</div>
           <div class="invalid-feedback">Please Enter Price Correctly</div></div>
             <div class="mb-3 col-md-8"> <label for="country" class="form-label edio">Edit Country : </label>
@@ -35,5 +35,19 @@
             <input name="listing[location]" required id="location" class="form-control edio" value="<%= lits.location %>" type="text" />
             <div class="valid-feedback">Location Looks Good</div>
           <div class="invalid-feedback">Please Enter Location Correctly</div></div>
-           
-         <button class="btn btn-dark add-btn">Edit</button></form></div></div>
+          <div class="mb-3"><label for="category" class="form-label">Update Your Category</label>
+          <select class="form-select form-select-sm " id="category"  name="listing[category][]">
+            <option selected>Choose one Option</option>
+            <option value="rooms">Rooms Avilable</option>
+            <option value="iconic cities">Iconic Cities Avilable</option>
+            <option value="castles">Castles Avilable</option>
+            <option value="amazing pools">Amazing Pools Avilable</option>
+            <option value="mountains">Mountains Avilable</option>
+            <option value="arctic">Arctic Avilable</option>
+            <option value="farms">Farms Avilable</option>
+            <option value="camping">Camping Avilable</option>
+          </select> 
+          <div class="valid-feedback">Looks Good Category</div>
+          <div class="invalid-feedback">Please Select Correctly</div></div>
+        
+         <button class="btn btn-dark add-btn mb-3">Edit</button></form></div></div>
