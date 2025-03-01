@@ -30,9 +30,9 @@
             <input name="listing[location]"  class="form-control" id="location" placeholder="enter location" required type="text" />
             <div class="valid-feedback">Location Looks Good</div>
           <div class="invalid-feedback">Please Enter Location Correctly</div></div>
-          <div class="mb-3"><label for="category" class="form-label">Please Select an Category For Your Place</label>
-           <select class="form-select form-select-sm selss" id="category" name="listing[category][]">
-            <option selected value="">Choose one Option</option>
+          <div class="mb-3"><label for="category" class="form-label ">Please Select an Category For Your Place</label>
+           <select class="form-select form-select-sm" id="category" name="listing[category][]">
+            <option selected>Choose one Option</option>
             <option value="rooms">Rooms Avilable</option>
             <option value="iconic cities">Iconic Cities Avilable</option>
             <option value="castles">Castles Avilable</option>
@@ -47,15 +47,3 @@
         
            <button class="btn btn-dark add-btn">Add</button> </div> </div>
         </form>
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const categorySelect = document.getElementById("category");
-          const addButton = document.getElementsByClassName("add-btn");
-function toggleButton() {
-  if (categorySelect.value === "") {
-    addButton.disabled = true;
-  } else {
-    addButton.disabled = false;
-  }
-}});
-        </script>
